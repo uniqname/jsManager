@@ -55,3 +55,7 @@ Where `myNewNRC` is the handle for your Named Resource Collection,
       `path/to/resource` is, well, the path to your resource,
       `options` is the JSON object constructed in your component's `data-options` attribute
   and `doStuff` is a function to perform upon completion of the loading of all resources for the requirement.
+
+Construction of a Named Resource Collection DOES NOT mean those resourses will be loaded to the page, merely 
+that they CAN be. To load the resources, the appropriate handels need to be in a `data-require` attribute 
+somewhere in the DOM.
