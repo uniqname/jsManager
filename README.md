@@ -52,6 +52,6 @@ myNewNRC = ng.Resource(['path/to/resource.js',
 ```
 
 Where `myNewNRC` is the handle for your Named Resource Collection,
-      `path/to/resource` is a, well, the path to your resource,
+      `path/to/resource` is, well, the path to your resource,
       `options` is the JSON object constructed in your component's `data-options` attribute
   and `doStuff` is a function to perform upon completion of the loading of all resources for the requirement.
