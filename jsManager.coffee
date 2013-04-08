@@ -54,80 +54,9 @@ class ng.Resource
     ng.resources = {} if not ng.resources
 
     $.extend ng.resources,
-        addThis : new ng.Resource 'http://s7.addthis.com/js/250/addthis_widget.js#pubid=ng-dmg'
-
-        ads : new ng.Resource(["#{ STATIC_URL }js/jq.ads.js"],
-            (opts) ->
-                ng.$(this).ads opts)
-
-        carousel: new ng.Resource([
-            "#{ STATIC_URL }js/jq.carousel.js"
-            "#{ STATIC_URL }js/scrollto.js"
-            ], (opts) ->
-            ng.$(this).carousel opts)
-
-        eCommerce : new ng.Resource([
-            "#{ STATIC_URL }js/jq.carousel.js"
-            "#{ STATIC_URL }js/scrollto.js"
-            "#{ STATIC_URL }js/mustache.js"
-            "#{ STATIC_URL }js/jq.ecommerce.js"
-            ], (opts) ->
-                ng.$(this).eCommerce(opts))
-
-        
-        facebook: new ng.Resource(['//connect.facebook.net/en_US/all.js#xfbml=1&appId=205529552888226'])
-        
-        floodlight: new ng.Resource(null, (opts) ->
-            ng.analytics.floodlight.generate(opts))
-        
-        gallery: new ng.Resource(["#{ STATIC_URL }js/jq.gallery.js"], (opts) ->
-            #resource initialization
-            ng.$(this).gallery opts)
-
-        lzy: new ng.Resource(null, (opts) ->
-            ng.$(this).attr('src', opts).removeClass 'lzy')
-
-        ngsPlayer : new ng.Resource([
-                "#{ STATIC_URL }js/acudeo.js",
-                "#{ STATIC_URL }js/swfobject.js",
-                "#{ STATIC_URL }js/ngs_player.js"
-            ], (opts) ->
-                ng.$(this).ngsPlayer opts)
-
-        paginate: new ng.Resource(["#{ STATIC_URL }js/jq.paginate.js"], (opts) ->
-            ng.$(this).paginate opts)
-
-        pageScroll: new ng.Resource([
-                "#{ STATIC_URL }js/scrollto.js",
-                "#{ STATIC_URL }js/pageScroll.js"
-            ], (opts) ->
-                ng.$(this).pageScroll opts)
-
-        quickSearch: new ng.Resource(["#{ STATIC_URL }js/jq.quicksearch.js"], (opts) ->
-            ng.$(this).quicksearch(opts))
-
-        rssList: new ng.Resource(["#{ STATIC_URL }js/rssList.js"], (opts) ->
-            ng.$(this).rssList(opts))
-
-        scrollTo: new ng.Resource(["#{ STATIC_URL }js/scrollto.js"], (opts) ->
-                ng.$(this).scrollTo Array.prototype.shift.call(opts), opts)
-
-        swfobject: new ng.Resource([
-                "#{ STATIC_URL }js/swfobject.js"
-            ], ->
-                ng.$(document).trigger 'swfobjectReady')
-
-        tabs: new ng.Resource(["#{ STATIC_URL }js/tabs.js"], (opts) ->
-            ng.$(this).tabs(opts))
-
-        textEntry: new ng.Resource(["#{ STATIC_URL }js/text_entry.js"], (opts) ->
-            ng.$(this).textEntry opts)
-
-        toolTip: new ng.Resource(["#{ STATIC_URL }js/tooltip.js"], (opts) ->
-            ng.$(this).toolTips(opts))
-
-        videoEmbed: new ng.Resource(["#{ STATIC_URL }js/videoEmbed.js"], (opts) ->
-            ng.$(this).videoEmbed(opts))
+        # package: new ng.Resource('path/to/resource.js', 'path/to/resource.css', ->
+        #   callback()
+        #)
 )(ng)
 
 ng.load = (name, opts) ->
